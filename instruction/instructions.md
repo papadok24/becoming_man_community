@@ -140,7 +140,7 @@
   * Coach Short Bio
   * Coach Picture
   * Coach Social Media Links
-* Transformation you can Expect and What you will be exposed to
+* Transformation you can Expect and What you will be exposed to section
   * Transformation you can Expect
     * LEARN TO OVERCOME THE THREE DEFAULTS THAT KILL EVERY MAN'S POTENTIAL IN LIFE
     * CONNECT SPIRIT, SOUL, & BODY

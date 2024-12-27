@@ -282,10 +282,334 @@
       <!-- Background Decorative Element -->
       <div class="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
     </section>
+
+    <!-- Coaches Section -->
+    <CoachesSection />
+
+    <!-- Transformation & Exposure Section -->
+    <section class="py-24 bg-white dark:bg-black relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-black dark:text-white">
+            Your Transformation Journey
+          </h2>
+          <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            Experience a complete transformation of your life through intensive training and practical exposure.
+          </p>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Transformation You Can Expect -->
+          <div class="space-y-8">
+            <div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 text-black dark:text-white flex items-center">
+                <svg class="w-8 h-8 mr-3 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Transformation You Can Expect
+              </h3>
+              <div class="space-y-4">
+                <div v-for="(item, index) in transformationItems" :key="index" 
+                  class="flex items-start p-4 bg-white dark:bg-black rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+                  <svg class="w-6 h-6 mr-3 text-black dark:text-white flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">{{ item }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What You Will Be Exposed To -->
+          <div class="space-y-8">
+            <div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 text-black dark:text-white flex items-center">
+                <svg class="w-8 h-8 mr-3 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                What You Will Be Exposed To
+              </h3>
+              <div class="space-y-4">
+                <div v-for="(item, index) in exposureItems" :key="index" 
+                  class="flex items-start p-4 bg-white dark:bg-black rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+                  <svg class="w-6 h-6 mr-3 text-black dark:text-white flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">{{ item }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Decorative Element -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
+    </section>
+
+    <!-- Standards Section -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-black dark:text-white">
+            The Standards
+          </h2>
+          <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            Prerequisites and requirements for participating in the Warrior Evolution program.
+          </p>
+        </div>
+
+        <!-- Core Requirements -->
+        <div class="mb-20">
+          <h3 class="text-3xl font-bold mb-12 text-black dark:text-white text-center flex items-center justify-center">
+            <Icon name="mdi:shield-check" class="w-8 h-8 mr-3" />
+            Core Requirements
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Basic Requirements -->
+            <div class="bg-white dark:bg-black p-8 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <Icon name="mdi:account-check" class="w-8 h-8 mr-3 text-black dark:text-white" />
+                <h3 class="text-2xl font-bold text-black dark:text-white">Basic Requirements</h3>
+              </div>
+              <div class="space-y-4">
+                <div v-for="(req, index) in ['BE A MAN', 'Minimum age: 25 years old']" :key="index"
+                  class="flex items-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                  <Icon name="mdi:check-circle" class="w-6 h-6 mr-3 text-green-600 dark:text-green-500" />
+                  <span class="text-gray-700 dark:text-gray-300">{{ req }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Physical Requirements -->
+            <div class="bg-white dark:bg-black p-8 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <Icon name="mdi:arm-flex" class="w-8 h-8 mr-3 text-black dark:text-white" />
+                <h3 class="text-2xl font-bold text-black dark:text-white">Physical Requirements</h3>
+              </div>
+              <div class="space-y-4">
+                <div v-for="(req, index) in physicalRequirements" :key="index"
+                  class="flex items-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                  <Icon name="mdi:timer" class="w-6 h-6 mr-3 text-blue-600 dark:text-blue-500" />
+                  <span class="text-gray-700 dark:text-gray-300">{{ req }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Medical Clearance -->
+            <div class="bg-white dark:bg-black p-8 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+              <div class="mb-6">
+                <div class="flex items-center mb-3">
+                  <Icon name="mdi:medical-bag" class="w-8 h-8 mr-3 text-black dark:text-white" />
+                  <h3 class="text-2xl font-bold text-black dark:text-white">Medical Clearance</h3>
+                </div>
+                <p class="text-sm text-red-600 dark:text-red-400 flex items-center">
+                  <Icon name="mdi:alert" class="w-4 h-4 mr-2 flex-shrink-0" />
+                  Participants will need medical clearance for the following:
+                </p>
+              </div>
+              <div class="space-y-4">
+                <div v-for="(condition, index) in medicalClearance" :key="index"
+                  class="flex items-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                  <Icon name="mdi:close-circle" class="w-6 h-6 mr-3 text-red-600 dark:text-red-500" />
+                  <span class="text-gray-700 dark:text-gray-300">{{ condition }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Required Gear Section -->
+        <div class="relative">
+          <!-- Decorative Divider -->
+          <div class="absolute inset-x-0 -top-10 flex items-center justify-center">
+            <div class="w-32 h-1 bg-black dark:bg-white rounded-full opacity-10"></div>
+          </div>
+
+          <h3 class="text-3xl font-bold mb-12 text-black dark:text-white text-center flex items-center justify-center">
+            <Icon name="mdi:bag-checked" class="w-8 h-8 mr-3" />
+            Required Gear
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Clothing -->
+            <div class="bg-white dark:bg-black p-8 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <Icon name="mdi:tshirt-crew" class="w-8 h-8 mr-3 text-black dark:text-white" />
+                <h4 class="text-xl font-bold text-black dark:text-white">Clothing</h4>
+              </div>
+              <div class="space-y-4">
+                <div v-for="(item, index) in requiredClothing" :key="index"
+                  class="flex items-start p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                  <Icon name="mdi:hanger" class="w-6 h-6 mr-3 text-gray-600 dark:text-gray-400 flex-shrink-0 mt-1" />
+                  <span class="text-gray-700 dark:text-gray-300">{{ item }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Equipment -->
+            <div class="bg-white dark:bg-black p-8 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <Icon name="mdi:tools" class="w-8 h-8 mr-3 text-black dark:text-white" />
+                <h4 class="text-xl font-bold text-black dark:text-white">Equipment</h4>
+              </div>
+              <div class="space-y-4">
+                <div v-for="(item, index) in requiredEquipment" :key="index"
+                  class="flex items-start p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                  <Icon name="mdi:package-variant-closed" class="w-6 h-6 mr-3 text-gray-600 dark:text-gray-400 flex-shrink-0 mt-1" />
+                  <span class="text-gray-700 dark:text-gray-300">{{ item }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Decorative Element -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
+    </section>
+
+    <!-- Transportation Section -->
+    <section class="py-24 bg-white dark:bg-black relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-black dark:text-white">
+            Transportation
+          </h2>
+          <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            Important travel information for your Warrior Evolution journey.
+          </p>
+        </div>
+
+        <!-- Transportation Info Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Travel Responsibilities -->
+          <div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+            <div class="flex items-start mb-8">
+              <Icon name="mdi:information" class="w-8 h-8 mr-4 text-blue-600 dark:text-blue-500 flex-shrink-0" />
+              <div>
+                <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Travel Responsibilities</h3>
+                <div class="space-y-4">
+                  <div class="flex items-center">
+                    <Icon name="mdi:arrow-right-circle" class="w-6 h-6 mr-3 text-gray-600 dark:text-gray-400" />
+                    <p class="text-gray-700 dark:text-gray-300">
+                      YOU ARE RESPONSIBLE FOR YOUR TRANSPORTATION TO AND FROM OUR FACILITY
+                    </p>
+                  </div>
+                  <div class="flex items-center">
+                    <Icon name="mdi:van-utility" class="w-6 h-6 mr-3 text-gray-600 dark:text-gray-400" />
+                    <p class="text-gray-700 dark:text-gray-300">
+                      ALL TRANSPORTATION DURING WARRIOR EVOLUTION IS PROVIDED BY US
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recommended Airports -->
+          <div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+            <div class="flex items-start mb-8">
+              <Icon name="mdi:airplane" class="w-8 h-8 mr-4 text-blue-600 dark:text-blue-500 flex-shrink-0" />
+              <div>
+                <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Recommended Airports</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">For participants requiring air travel, we recommend the following airports:</p>
+                <div class="space-y-4">
+                  <div class="flex items-center p-4 bg-white dark:bg-black rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+                    <Icon name="mdi:airport" class="w-6 h-6 mr-3 text-gray-600 dark:text-gray-400" />
+                    <span class="text-gray-700 dark:text-gray-300">HUNTSVILLE INTERNATIONAL AIRPORT</span>
+                  </div>
+                  <div class="flex items-center p-4 bg-white dark:bg-black rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+                    <Icon name="mdi:airport" class="w-6 h-6 mr-3 text-gray-600 dark:text-gray-400" />
+                    <span class="text-gray-700 dark:text-gray-300">BIRMINGHAM INTERNATIONAL AIRPORT</span>
+                  </div>
+                  <div class="flex items-center p-4 bg-white dark:bg-black rounded-xl transform hover:scale-[1.02] transition-all duration-300">
+                    <Icon name="mdi:airport" class="w-6 h-6 mr-3 text-gray-600 dark:text-gray-400" />
+                    <span class="text-gray-700 dark:text-gray-300">NASHVILLE INTERNATIONAL AIRPORT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Decorative Element -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
+    </section>
+
+    <!-- Call to Action -->
+    <WarriorEvolutionCTA />
+
+    <!-- Background Decorative Element -->
+    <div class="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
   </div>
 </template>
 
 <script setup>
+const transformationItems = [
+  'LEARN TO OVERCOME THE THREE DEFAULTS THAT KILL EVERY MAN\'S POTENTIAL IN LIFE',
+  'CONNECT SPIRIT, SOUL, & BODY',
+  'THE ABILITY TO BE COMPLETELY AWARE & CONCENTRATE',
+  'THRIVE IN STRESSFUL SITUATIONS',
+  'HOW TO FOCUS ON YOUR VISION & WHAT\'S AVAILABLE TO YOU',
+  'KILL THE A.N.T.S. (AUTOMATIC NEGATIVE THOUGHTS)',
+  'DEVELOP A TRUTHFUL VIEW OF YOURSELF',
+  'DEVELOP G.R.I.T',
+  'KNOW HOW TO CONTROL YOUR EMOTIONS',
+  'STOP DISTRACTIONS FROM DESTROYING YOUR LIFE',
+  'BE ABLE TO MAKE RIGHT DECISIONS AT THE RIGHT TIME TO MAKE THE RIGHT THINGS HAPPEN, REGARDLESS OF THE SITUATION'
+]
+
+const exposureItems = [
+  'HOW TO HAVE AND DEVELOP A MORNING ROUTINE THAT WORKS',
+  'HOW TO SET AND ACHIEVE S.M.A.R.T. GOALS',
+  'EXTREME PHYSICAL EXERCISE DESIGNED TO PUSH YOU PAST YOUR QUIT METER',
+  'SELF DEFENSE',
+  'FIREARMS INSTRUCTION WITH REAL LIFE SHOOTING SCENARIOS',
+  'TIME FOR AFTER ACTION REVIEWS TO HELP YOU NAVIGATE LIFE',
+  'LEADERSHIP PRINCIPLES FOR LIFE, MARRIAGE, & BUSINESS',
+  'HOW TO BE A SUCCESSFUL MENTOR TO OTHER MEN & TO YOUR CHILDREN'
+]
+
+const physicalRequirements = [
+  '50 push-ups in 2 minutes',
+  '50 sit-ups in 2 minutes',
+  '50 air squats in 2 minutes',
+  '5 dead hang pull-ups',
+  '1 mile run in under 10 minutes (in boots & utility pants)'
+]
+
+const medicalClearance = [
+  'Type 1 Diabetes (insulin dependent)',
+  'Heart/valvular shunts or stents',
+  'History of seizures',
+  'Hyperthyroid',
+  'Current prescription pain medications'
+]
+
+const requiredClothing = [
+  '3+ pairs black BDU ripstop pants',
+  '2 pairs compression shorts',
+  '1 pair broken-in boots',
+  '8+ black crew neck t-shirts',
+  '3 pairs black workout shorts',
+  'Socks (layered for hiking)',
+  'Running shoes',
+  'Optional: Black floppy/boonie hat for sun protection'
+]
+
+const requiredEquipment = [
+  'Black BDU utility belt',
+  '9mm handgun with 3 magazines and retention holster',
+  'Sleeping bag',
+  '3 towels',
+  'Personal toiletries'
+]
+
 const handleApplyNow = () => {
   // TODO: Implement application process
   console.log('Apply Now clicked')
