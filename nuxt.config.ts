@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     redirectOptions: {
       login: '/',
       callback: '/confirm',
-      exclude: ['/', '/warrior-evolution', '/about']
+      exclude: ['/', '/warrior-evolution', '/about', '/invite']
     },
   }
 })

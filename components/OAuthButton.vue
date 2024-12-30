@@ -39,6 +39,10 @@ const props = defineProps({
   redirectPath: {
     type: String,
     default: '/dashboard'
+  },
+  roleId: {
+    type: [String, Number],
+    default: null
   }
 })
 
@@ -58,23 +62,19 @@ const handleClick = async () => {
       const { error } = await auth.signInWithOAuth({
         provider: props.provider,
         options: {
-          redirectTo: window.location.origin + '/confirm',
-          data: {
-            redirectPath: props.redirectPath
-          }
+          redirectTo: `${window.location.origin}/confirm?roleId=${String(props.roleId)}`,
+          scopes: 'email'
         }
       })
       if (error) throw error
     }
   } catch (error) {
     console.error('Authentication error:', error.message)
-    // You might want to emit an event here to handle the error in the parent component
     emit('authError', error.message)
   } finally {
     loading.value = false
   }
 }
 
-// Define emits
 const emit = defineEmits(['authError'])
 </script>

@@ -203,12 +203,20 @@
 
 ### 4.3 User Authentication
 
-**Description**: Invite-only registration plus social login options.
+**Description**: Invite-only registration with social login options.
 
 **Requirements**:
 * **Invite Code**: Must be validated upon registration (admin-generated)
-* **Social Sign-In**: Google, Apple
-* **Fallback**: Email/password if needed
+* **Social Sign-In**: Google
+* **Use Nuxt Server Route**: /api/confirm-invite.post.ts
+* **Use Service Role with Supabase Client**: This will require a supabase client that has the service role key.
+
+Proposed Implementation:
+* Invite Code: Admin generates invite codes and sends them to users.
+* USers are directed to an invite page where they can input their code to get verified, this will post to the /api/confirm-invite.post.ts route and check if the code is valid and hasnt already been used.
+* We will use the supabase service role to check the code and assign the user a role. This will require a supabase client that has the service role key.
+* if the code is valid they have the option to sign in with google, we will pass a role id to the google oauth flow
+* The google oath flow will redirect them to a confirm page where they will then be assigned a role and redirected to the dashboard. If the users do not have a role they will be redirected to the invite page. (this is to capture people who try to sign in with google without an invite code)
 
 ### 4.4 User Profiles
 
