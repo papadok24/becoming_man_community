@@ -35,7 +35,12 @@
         <!-- Auth Buttons -->
         <div class="flex items-center space-x-4">
           
-          <OAuthButton provider="google" label="Sign In" icon="mdi:google" />
+          <OAuthButton 
+            provider="google" 
+            label="Sign In" 
+            icon="mdi:google"
+            :isRegistration="false"
+          />
         </div>
       </div>
     </nav>

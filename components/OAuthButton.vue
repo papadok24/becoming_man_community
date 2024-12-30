@@ -36,18 +36,30 @@ const props = defineProps({
     type: String,
     required: true
   },
-  redirectPath: {
-    type: String,
-    default: '/dashboard'
-  },
   roleId: {
     type: [String, Number],
     default: null
+  },
+  isRegistration: {
+    type: Boolean,
+    default: false
   }
 })
 
 const loading = ref(false)
 const isSignedIn = computed(() => $isAuthenticated())
+
+const getRedirectUrl = () => {
+  const params = new URLSearchParams()
+  
+  if (props.isRegistration && props.roleId) {
+    params.append('roleId', String(props.roleId))
+  }
+  
+  params.append('flow', props.isRegistration ? 'registration' : 'signin')
+  
+  return `${window.location.origin}/confirm?${params.toString()}`
+}
 
 const handleClick = async () => {
   try {
@@ -62,7 +74,7 @@ const handleClick = async () => {
       const { error } = await auth.signInWithOAuth({
         provider: props.provider,
         options: {
-          redirectTo: `${window.location.origin}/confirm?roleId=${String(props.roleId)}`,
+          redirectTo: getRedirectUrl(),
           scopes: 'email'
         }
       })

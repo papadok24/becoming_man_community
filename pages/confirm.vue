@@ -7,122 +7,114 @@ const loading = ref(true)
 const error = ref(null)
 const redirectTimer = ref(null)
 
-function logDebug(message, data = null) {
-  const timestamp = new Date().toISOString()
-  console.log(`[${timestamp}] Confirm Debug:`, message)
-  if (data) {
-    console.log('Data:', data)
-  }
-}
-
 async function handleError(message) {
   error.value = message
-  logDebug('Signing out user due to error')
   
   try {
-    const { error: signOutError } = await supabase.auth.signOut()
-    if (signOutError) {
-      logDebug('Error during sign out:', signOutError)
-    }
+    await supabase.auth.signOut()
   } catch (e) {
-    logDebug('Exception during sign out:', e)
+    console.error('Error during sign out:', e)
   }
 
-  // Set a timer for redirect
   redirectTimer.value = setTimeout(async () => {
-    logDebug('Redirecting to invite page after error')
     await router.push('/invite')
   }, 5000)
 }
 
+async function handleRegistration() {
+  // Get role_id from URL params
+  const roleId = route.query.roleId
+
+  if (!roleId) {
+    throw new Error('No role ID found. Please start from the invite page.')
+  }
+
+  // Get user's profile
+  const { data: profile, error: profileError } = await supabase
+    .from('profile')
+    .select('id, supabase_user')
+    .eq('supabase_user', user.value.id)
+    .limit(1)
+    .maybeSingle()
+
+  if (profileError) {
+    throw new Error(`Failed to fetch profile: ${profileError.message || 'Unknown error'}`)
+  }
+
+  if (!profile) {
+    throw new Error('Profile not found. Please contact support.')
+  }
+
+  // Assign role using server route
+  const { data: response, error: assignError } = await useFetch('/api/assign-role', {
+    method: 'POST',
+    body: {
+      profileId: profile.id,
+      roleId
+    }
+  })
+
+  if (assignError.value) {
+    throw new Error(assignError.value.message || 'Failed to assign role. Please try again.')
+  }
+
+  if (!response.value?.success) {
+    throw new Error('Role assignment failed. Please try again.')
+  }
+
+  await router.push('/dashboard')
+}
+
+async function handleSignIn() {
+  // Get user's profile
+  const { data: profile, error: profileError } = await supabase
+    .from('profile')
+    .select('id, supabase_user')
+    .eq('supabase_user', user.value.id)
+    .limit(1)
+    .maybeSingle()
+
+  if (profileError) {
+    throw new Error(`Failed to fetch profile: ${profileError.message || 'Unknown error'}`)
+  }
+
+  if (!profile) {
+    throw new Error('No account found. Please register first.')
+  }
+
+  // Check if user has any roles using the new endpoint
+  const { data: roleCheck, error: roleCheckError } = await useFetch('/api/check-roles', {
+    method: 'POST',
+    body: {
+      profileId: profile.id
+    }
+  })
+
+  if (roleCheckError.value) {
+    throw new Error('Failed to verify account access. Please try again.')
+  }
+
+  if (!roleCheck.value?.hasRoles) {
+    throw new Error('You need an invite to access this platform. Please request an invite to continue.')
+  }
+
+  await router.push('/dashboard')
+}
+
 async function handleConfirmation() {
   try {
-    logDebug('Starting confirmation process')
-    logDebug('Current user state:', user.value)
-    logDebug('Current route query params:', route.query)
-
     if (!user.value) {
-      logDebug('No user found in state')
       throw new Error('Authentication failed. Please try signing in again.')
     }
 
-    // Get role_id from URL params
-    const roleId = route.query.roleId
-    logDebug('Retrieved roleId from query:', { roleId })
+    const flow = route.query.flow || 'signin'
 
-    if (!roleId) {
-      logDebug('No roleId found in query params', { 
-        fullQuery: route.query,
-        fullPath: route.fullPath,
-        hash: route.hash
-      })
-      throw new Error('No role ID found. Please start from the invite page.')
+    if (flow === 'registration') {
+      await handleRegistration()
+    } else {
+      await handleSignIn()
     }
-
-    // Get user's profile
-    logDebug('Fetching user profile', { 
-      userId: user.value.id,
-      email: user.value.email,
-      aud: user.value.aud
-    })
-
-    // Try to get the profile directly
-    const { data: profile, error: profileError } = await supabase
-      .from('profile')
-      .select('id, supabase_user')
-      .eq('supabase_user', user.value.id)
-      .limit(1)
-      .maybeSingle()
-
-    if (profileError) {
-      logDebug('Profile fetch error:', profileError)
-      if (profileError.code === 'PGRST116') {
-        throw new Error('Profile not found. Please contact support.')
-      }
-      throw new Error(`Failed to fetch profile: ${profileError.message || 'Unknown error'}`)
-    }
-
-    if (!profile) {
-      logDebug('No profile found for user')
-      throw new Error('Profile not found. Please contact support.')
-    }
-
-    logDebug('Profile found:', profile)
-
-    // Assign role using server route
-    logDebug('Attempting role assignment', { profileId: profile.id, roleId })
-    const { data: response, error: assignError } = await useFetch('/api/assign-role', {
-      method: 'POST',
-      body: {
-        profileId: profile.id,
-        roleId
-      }
-    })
-
-    if (assignError.value) {
-      logDebug('Role assignment error:', assignError.value)
-      const status = assignError.value?.statusCode
-      if (status === 400) {
-        throw new Error('Invalid role assignment request. Please try again.')
-      }
-      if (status === 500) {
-        throw new Error('Server error while assigning role. Please try again later.')
-      }
-      throw new Error(assignError.value.message || 'Failed to assign role. Please try again.')
-    }
-
-    logDebug('Role assignment response:', response.value)
-
-    if (!response.value?.success) {
-      logDebug('Role assignment failed - no success in response')
-      throw new Error('Role assignment failed. Please try again.')
-    }
-
-    logDebug('Role assignment successful, redirecting to dashboard')
-    // Redirect to dashboard
-    await router.push('/dashboard')
   } catch (e) {
-    logDebug('Error in confirmation process:', e)
     await handleError(e.message || 'An unexpected error occurred')
   } finally {
     loading.value = false
@@ -138,7 +130,6 @@ onUnmounted(() => {
 
 // Watch for user and handle confirmation
 watch(user, async (newUser) => {
-  logDebug('User state changed:', { hasUser: !!newUser })
   if (newUser) {
     await handleConfirmation()
   }
@@ -154,7 +145,7 @@ watch(user, async (newUser) => {
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
         <p class="mt-4 text-lg font-medium text-gray-900 dark:text-white">
-          Setting up your account...
+          {{ route.query.flow === 'registration' ? 'Setting up your account...' : 'Signing you in...' }}
         </p>
       </div>
       
@@ -168,7 +159,7 @@ watch(user, async (newUser) => {
             </div>
             <div class="ml-3">
               <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
-                Error Setting Up Account
+                {{ route.query.flow === 'registration' ? 'Error Setting Up Account' : 'Error Signing In' }}
               </h3>
               <p class="mt-2 text-sm text-red-700 dark:text-red-300">
                 {{ error }}

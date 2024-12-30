@@ -147,6 +147,7 @@ function handleAuthError(message: string) {
           label="Continue with Google"
           icon="mdi:google"
           :roleId="validInvite.roleId"
+          :isRegistration="true"
           @authError="handleAuthError"
         />
       </div>
