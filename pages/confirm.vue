@@ -1,4 +1,6 @@
 <script setup>
+import { useUserStore } from '~/stores/user'
+
 const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 const route = useRoute()
@@ -6,12 +8,13 @@ const router = useRouter()
 const loading = ref(true)
 const error = ref(null)
 const redirectTimer = ref(null)
+const userStore = useUserStore()
 
 async function handleError(message) {
   error.value = message
   
   try {
-    await supabase.auth.signOut()
+    await userStore.signOut()
   } catch (e) {
     console.error('Error during sign out:', e)
   }
@@ -29,19 +32,11 @@ async function handleRegistration() {
     throw new Error('No role ID found. Please start from the invite page.')
   }
 
-  // Get user's profile
-  const { data: profile, error: profileError } = await supabase
-    .from('profile')
-    .select('id, supabase_user')
-    .eq('supabase_user', user.value.id)
-    .limit(1)
-    .maybeSingle()
+  // Initialize user store and fetch profile
+  userStore.setUser(user.value)
+  await userStore.fetchUserProfile()
 
-  if (profileError) {
-    throw new Error(`Failed to fetch profile: ${profileError.message || 'Unknown error'}`)
-  }
-
-  if (!profile) {
+  if (!userStore.profile) {
     throw new Error('Profile not found. Please contact support.')
   }
 
@@ -49,7 +44,7 @@ async function handleRegistration() {
   const { data: response, error: assignError } = await useFetch('/api/assign-role', {
     method: 'POST',
     body: {
-      profileId: profile.id,
+      profileId: userStore.profile.id,
       roleId
     }
   })
@@ -62,39 +57,21 @@ async function handleRegistration() {
     throw new Error('Role assignment failed. Please try again.')
   }
 
+  // Refresh roles after assignment
+  await userStore.fetchUserProfile()
   await router.push('/dashboard')
 }
 
 async function handleSignIn() {
-  // Get user's profile
-  const { data: profile, error: profileError } = await supabase
-    .from('profile')
-    .select('id, supabase_user')
-    .eq('supabase_user', user.value.id)
-    .limit(1)
-    .maybeSingle()
+  // Initialize user store and fetch profile
+  userStore.setUser(user.value)
+  await userStore.fetchUserProfile()
 
-  if (profileError) {
-    throw new Error(`Failed to fetch profile: ${profileError.message || 'Unknown error'}`)
-  }
-
-  if (!profile) {
+  if (!userStore.profile) {
     throw new Error('No account found. Please register first.')
   }
 
-  // Check if user has any roles using the new endpoint
-  const { data: roleCheck, error: roleCheckError } = await useFetch('/api/check-roles', {
-    method: 'POST',
-    body: {
-      profileId: profile.id
-    }
-  })
-
-  if (roleCheckError.value) {
-    throw new Error('Failed to verify account access. Please try again.')
-  }
-
-  if (!roleCheck.value?.hasRoles) {
+  if (!userStore.hasRoles) {
     throw new Error('You need an invite to access this platform. Please request an invite to continue.')
   }
 

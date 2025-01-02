@@ -32,6 +32,7 @@
 3. **Backend/DB**: Supabase
 4. **Payment**: Stripe
 5. **User Base**: ~500 initial users (focus on invite-only growth)
+6. **State Management**: Pinia with Nuxt
 
 ## 4. Features & Requirements
 
@@ -210,6 +211,7 @@
 * **Social Sign-In**: Google
 * **Use Nuxt Server Route**: /api/confirm-invite.post.ts
 * **Use Service Role with Supabase Client**: This will require a supabase client that has the service role key.
+* **Store user and profile information in Pinia Store**: Once users are authenticated, we store informaiton in the pinia store for easy access
 
 Proposed Implementation:
 * Invite Code: Admin generates invite codes and sends them to users.
@@ -218,16 +220,48 @@ Proposed Implementation:
 * if the code is valid they have the option to sign in with google, we will pass a role id to the google oauth flow
 * The google oath flow will redirect them to a confirm page where they will then be assigned a role and redirected to the dashboard. If the users do not have a role they will be redirected to the invite page. (this is to capture people who try to sign in with google without an invite code)
 
-### 4.4 User Profiles
+### 4.4 Dashboard Section
 
-**Description**: Basic user info for community presence.
+**Description**: The dashboard is the main hub for the user. It will have a sidebar with navigation links and a header with the logo and a toggle for dark mode. The dashboard will have a main content area that will be used to display the different sections of the app.
 
 **Requirements**:
-* Profile picture (upload with image resizing/validation)
-* Short biography field
-* Optional: Customizable notification preferences
+* The dashboard will have a sidebar with navigation links and a header with the logo and a toggle for dark mode.
+* The dashboard will have a main content area that will be used to display the different sections of the app.
 
-### 4.5 Threads System
+- The links will be specific to logged in in users
+  - Link to Threads Page
+  - Link to Events Page
+  - Link to Warrior Evolution Content Page
+  - Link to Catalog Page
+- The dashboard will have a main content area that will display various sections of the app
+  - There will be a welcome section that will display the users name and a welcome message
+  - There will be a quick stats section
+    - Total Members
+    - Threads
+    - Events
+  - There will be a latest news and activity section.
+
+### 4.5 User Profile Page
+
+**Description**: The user profile page will display the users profile information. This will also show the users roles and any other relecant information.
+
+**Requirements**:
+* The user profile page will display the users profile information. This will also show the users roles and any other relecant information.
+* The user profile page will have a way to edit the users profile informaiton and submit changes.
+* The user profile page will use the user store from Pinia to sync the data information. 
+* Updates to the user will be stored in our profile table in supabase. 
+* Form will support validation and error handling.
+
+Fields required for the profile page that can be edited by the user:
+- Full Name (text) - required
+- Email (text) - required
+- Profile Image (image)
+- Biography (text)
+- Instagram Handle (text)
+- X Handle (text)
+- Youtube Handle (text)
+
+### 4.6 Threads System
 
 **Description**: Main community interaction hub.
 
@@ -236,7 +270,7 @@ Proposed Implementation:
 * **Media**: Text, images, optional video links (hosted externally or via Supabase storage)
 * **Engagement**: Users can post, comment, and react (e.g., likes)
 
-### 4.6 Catalog & Commerce (Phase 2)
+### 4.7 Catalog & Commerce (Phase 2)
 
 **Description**: Offers merchandise, courses, coaching sessions.
 
@@ -246,7 +280,7 @@ Proposed Implementation:
 * 1-on-1 coaching booking system
 * Stripe payment integration (checkout, refunds, receipts)
 
-### 4.7 Notifications
+### 4.8 Notifications
 
 **Description**: In-app, email, and optional push.
 
@@ -255,7 +289,7 @@ Proposed Implementation:
 * Email for important updates (thread replies, purchases, invites)
 * Push notifications for mobile (Phase 3 feasibility)
 
-### 4.8 Analytics & Tracking (Phase 3)
+### 4.9 Analytics & Tracking (Phase 3)
 
 **Description**: Measure platform usage, engagement, and sales performance.
 
@@ -264,7 +298,7 @@ Proposed Implementation:
 * Sales metrics (revenue per offering, total sales)
 * Reporting dashboards in Admin Panel
 
-### 4.9 Admin Dashboard
+### 5.0 Admin Dashboard
 
 **Description**: Centralized management of users, content, and commerce.
 

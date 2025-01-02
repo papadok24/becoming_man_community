@@ -3,14 +3,17 @@
     <SiteHeader />
     <slot />
     <SiteFooter />
+    <Toast />
   </div>
 </template>
 
-<script setup>
-// Force dark mode by default
+<script setup lang="ts">
+
+const { isDark } = useTheme()
+
+// Initialize theme based on system preference
 onMounted(() => {
-  if (!document.documentElement.classList.contains('dark')) {
-    document.documentElement.classList.add('dark')
-  }
+  // The theme will be automatically handled by useDark
+  // This ensures proper initialization and system preference sync
 })
 </script>
