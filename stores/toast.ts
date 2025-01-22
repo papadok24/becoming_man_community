@@ -1,9 +1,10 @@
 // Export for auto-imports
-export * from './toast'
+//export * from './toast'
 
 import { defineStore } from 'pinia'
 
-interface Toast {
+// Types
+export interface Toast {
   id: number
   message: string
   type: 'success' | 'error'
@@ -14,6 +15,7 @@ interface ToastState {
   toasts: Toast[]
 }
 
+// Store
 export const useToastStore = defineStore('toast', {
   state: (): ToastState => ({
     toasts: []
@@ -40,7 +42,6 @@ export const useToastStore = defineStore('toast', {
     },
 
     showSuccess(message: string, duration?: number) {
-      console.log('Toast success:', message)
       this.addToast({
         message,
         type: 'success',
@@ -49,7 +50,6 @@ export const useToastStore = defineStore('toast', {
     },
 
     showError(message: string, duration?: number) {
-      console.log('Toast error:', message)
       this.addToast({
         message,
         type: 'error',
