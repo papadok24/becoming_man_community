@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white dark:bg-black">
+  <div v-if="isThemeReady" class="min-h-screen bg-white dark:bg-black">
     <!-- Mobile menu button -->
     <div class="lg:hidden fixed top-0 left-0 z-50 p-4">
       <button 
@@ -169,6 +169,9 @@
 <script setup lang="ts">
 import { useUserStore } from '~/stores/user'
 
+// Get theme state from global instance
+const { isDark, toggleDark, isThemeReady } = useTheme()
+
 const userStore = useUserStore()
 const router = useRouter()
 const route = useRoute()
@@ -176,27 +179,30 @@ const isUserMenuOpen = ref(false)
 const isSidebarCollapsed = ref(false)
 const isSidebarOpen = ref(false)
 
-// Theme handling
-const { isDark } = useTheme()
-
 const handleThemeToggle = (e: MouseEvent) => {
   e.preventDefault()
-  isDark.value = !isDark.value
+  toggleDark()
 }
 
 const userName = computed(() => userStore.userName)
 const userAvatar = computed(() => userStore.userAvatar)
 
-const navigationLinks = [
+const isAdmin = computed(() => userStore.roles.some(role => role.role_id === 1))
+
+const navigationLinks = computed(() => [
   { to: '/dashboard', icon: 'mdi:view-dashboard', label: 'Dashboard' },
   { to: '/threads', icon: 'mdi:forum', label: 'Threads' },
   { to: '/warrior-evolution', icon: 'mdi:weight-lifter', label: 'Warrior Evolution' },
-  { to: '/profile', icon: 'mdi:account', label: 'Profile' }
-]
+  { to: '/profile', icon: 'mdi:account', label: 'Profile' },
+  // Admin only links
+  ...(isAdmin.value ? [
+    { to: '/users', icon: 'mdi:account-group', label: 'Users' }
+  ] : [])
+])
 
 // Compute current page title from navigation links
 const currentPageTitle = computed(() => {
-  const currentLink = navigationLinks.find(link => link.to === route.path)
+  const currentLink = navigationLinks.value.find(link => link.to === route.path)
   return currentLink?.label || 'Dashboard'
 })
 

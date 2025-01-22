@@ -1,17 +1,30 @@
 <script setup>
 import { useUserStore } from '~/stores/user'
 
-const userStore = useUserStore()
-
-// Redirect if not authenticated
-if (!userStore.isAuthenticated) {
-  navigateTo('/invite')
-}
-
-// Set the layout to dashboard
+// Set the layout and middleware
 definePageMeta({
-  layout: 'dashboard'
+  layout: 'dashboard',
+  middleware: ['auth']
 })
+
+const userStore = useUserStore()
+const isLoading = ref(true)
+
+// Fetch profile data on mount if needed
+onMounted(async () => {
+  try {
+    if (!userStore.profile) {
+      await userStore.fetchUserProfile()
+    }
+  } catch (error) {
+    console.error('Error fetching profile:', error)
+  } finally {
+    isLoading.value = false
+  }
+})
+
+// Add loading state to template
+const showContent = computed(() => !isLoading.value)
 </script>
 
 <template>

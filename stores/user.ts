@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { useSupabaseClient, useSupabaseUser } from '#imports'
 import type { User } from '@supabase/supabase-js'
 import type { PostgrestError } from '@supabase/supabase-js'
+import { useNuxtApp } from '#imports'
 
 // Database types
 interface Tables {
@@ -54,19 +55,42 @@ export const useUserStore = defineStore('user', {
     isAuthenticated: (state): boolean => !!state.user,
     hasRoles: (state): boolean => state.roles.length > 0,
     userName: (state): string => 
+      state.profile?.full_name || 
       state.user?.user_metadata?.full_name || 
       state.user?.user_metadata?.name || 
       'User',
-    userAvatar: (state): string => 
-      state.profile?.profile_img || 
-      state.user?.user_metadata?.avatar_url || 
-      state.user?.user_metadata?.picture || 
-      'https://via.placeholder.com/32',
+    userAvatar: (state): string => {
+      // Check profile image first
+      if (state.profile?.profile_img) {
+        // If it's a full URL, use it directly
+        if (state.profile.profile_img.startsWith('http')) {
+          return state.profile.profile_img
+        }
+        // If it's a storage path, construct the full URL
+        if (state.profile.profile_img.startsWith('avatars/')) {
+          const supabase = useSupabaseClient()
+          const { data } = supabase.storage
+            .from('public')
+            .getPublicUrl(state.profile.profile_img)
+          return data.publicUrl
+        }
+      }
+      
+      // Fallback to user metadata
+      return state.user?.user_metadata?.avatar_url || 
+             state.user?.user_metadata?.picture || 
+             '/default-avatar.png'
+    },
   },
 
   actions: {
     setUser(user: User | null): void {
       this.user = user
+      // If user is null, clear profile and roles too
+      if (!user) {
+        this.profile = null
+        this.roles = []
+      }
     },
 
     setProfile(profile: UserProfile | null): void {
@@ -91,9 +115,14 @@ export const useUserStore = defineStore('user', {
       const supabase = useSupabaseClient()
       
       try {
+        if (!process.server || process.dev) {
+          console.log('Starting profile fetch for user:', this.user.id)
+        }
+        
         this.setLoading(true)
         this.setError(null)
 
+        // First fetch profile
         const { data: profile, error: profileError } = await supabase
           .from('profile')
           .select<string, UserProfile>('id, supabase_user, bio, profile_img, email, full_name, instagram_url, twitter_url, youtube_url')
@@ -101,28 +130,36 @@ export const useUserStore = defineStore('user', {
           .limit(1)
           .maybeSingle()
 
-        if (profileError) throw profileError
-        
+        if (profileError) {
+          throw profileError
+        }
+
+        if (!profile) {
+          throw new Error('Profile not found')
+        }
+
         this.setProfile(profile)
 
-        if (profile) {
-          try {
-            const roleCheck = await $fetch<RoleCheckResponse>('/api/check-roles', {
-              method: 'POST',
-              body: {
-                profileId: profile.id
-              }
-            })
-
-            if (roleCheck?.roles) {
-              this.setRoles(roleCheck.roles)
+        // Then fetch roles using the profile ID
+        try {
+          const roleCheck = await $fetch<RoleCheckResponse>('/api/check-roles', {
+            method: 'POST',
+            body: {
+              profileId: profile.id
             }
-          } catch (error) {
-            console.error('Error fetching roles:', error)
+          })
+
+          if (roleCheck?.roles) {
+            this.setRoles(roleCheck.roles)
           }
+        } catch (roleError: any) {
+          console.error('Error fetching roles:', roleError)
+          // Don't throw here as roles are not critical for basic functionality
         }
-      } catch (error) {
-        this.setError(error instanceof Error ? error.message : 'An error occurred')
+
+      } catch (error: any) {
+        console.error('Error fetching user data:', error)
+        this.setError(error.message || 'Failed to fetch user data')
       } finally {
         this.setLoading(false)
       }
