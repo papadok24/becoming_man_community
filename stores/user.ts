@@ -66,8 +66,8 @@ export const useUserStore = defineStore('user', {
         if (state.profile.profile_img.startsWith('http')) {
           return state.profile.profile_img
         }
-        // If it's a storage path, construct the full URL
-        if (state.profile.profile_img.startsWith('avatars/')) {
+        // If it's a storage path, construct the full URL only on client side
+        if (state.profile.profile_img.startsWith('avatars/') && process.client) {
           const supabase = useSupabaseClient()
           const { data } = supabase.storage
             .from('public')

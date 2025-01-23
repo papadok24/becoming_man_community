@@ -12,9 +12,11 @@ export interface Database {
           instagram_url: string | null
           twitter_url: string | null
           youtube_url: string | null
+          created_at: string
+          updated_at: string
         }
-        Insert: Omit<Database['public']['Tables']['profile']['Row'], 'id'>
-        Update: Partial<Database['public']['Tables']['profile']['Row']>
+        Insert: Omit<Database['public']['Tables']['profile']['Row'], 'id' | 'created_at' | 'updated_at'>
+        Update: Partial<Database['public']['Tables']['profile']['Insert']>
       }
       role: {
         Row: {
@@ -22,17 +24,18 @@ export interface Database {
           role_name: string
           created_at: string
         }
-        Insert: Omit<Database['public']['Tables']['role']['Row'], 'id'>
-        Update: Partial<Database['public']['Tables']['role']['Row']>
+        Insert: Omit<Database['public']['Tables']['role']['Row'], 'id' | 'created_at'>
+        Update: Partial<Database['public']['Tables']['role']['Insert']>
       }
       profile_role: {
         Row: {
           profile_id: number
           role_id: number
           assigned_at: string
+          role?: Database['public']['Tables']['role']['Row']
         }
-        Insert: Database['public']['Tables']['profile_role']['Row']
-        Update: Partial<Database['public']['Tables']['profile_role']['Row']>
+        Insert: Omit<Database['public']['Tables']['profile_role']['Row'], 'assigned_at'>
+        Update: Partial<Database['public']['Tables']['profile_role']['Insert']>
       }
     }
     Views: {

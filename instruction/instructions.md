@@ -47,7 +47,7 @@
     * Links to anchors on about section
 * About Section
   * Becoming Man Movement
-    * BECOMING MAN is a movement of God, birthed in the heart of Pastor IV Marsh. It is centered around returning men to their proper purpose on the earth; something that is so needed in our culture today. You don’t have to look very far back into the annuals of American history to see that honorable men are disappearing before our very eyes. Honorable men who demonstrated true masculinity. Men who were a man’s man, a man who not only demonstrates the physical qualities of ruggedness but who also possess mental toughness and emotional strength. A man who says what he means and means what he says. A man who recognizes the importance of honesty. A man of noble principle. A man without covetousness. A man who cannot be bribed or bullied. A man committed to manly virtues. A man who is the head of his home and knows how to control and discipline his children. A man who loves justice but also knows tenderness and mercy. A man who fears God and shows reverence for that which is sacred. A man who knows the difference between the rule of law and the lust for power. On the whole, our society today has little tolerance for such men. Even in our churches, masculinity is dying. BECOMING MAN seeks to reverse the current trend in our culture as we take men on a journey of self-discovery and self-mastery.
+    * BECOMING MAN is a movement of God, birthed in the heart of Pastor IV Marsh. It is centered around returning men to their proper purpose on the earth; something that is so needed in our culture today. You don't have to look very far back into the annuals of American history to see that honorable men are disappearing before our very eyes. Honorable men who demonstrated true masculinity. Men who were a man's man, a man who not only demonstrates the physical qualities of ruggedness but who also possess mental toughness and emotional strength. A man who says what he means and means what he says. A man who recognizes the importance of honesty. A man of noble principle. A man without covetousness. A man who cannot be bribed or bullied. A man committed to manly virtues. A man who is the head of his home and knows how to control and discipline his children. A man who loves justice but also knows tenderness and mercy. A man who fears God and shows reverence for that which is sacred. A man who knows the difference between the rule of law and the lust for power. On the whole, our society today has little tolerance for such men. Even in our churches, masculinity is dying. BECOMING MAN seeks to reverse the current trend in our culture as we take men on a journey of self-discovery and self-mastery.
     * The BECOMING MAN Level Requirements are designed to guide men along the path of transformation into a mature son of God. At each level, there are requirements intended to display the attributes of Christ: Prophet, Priest, King, and Warrior. While one could certainly progress mechanically through the levels with no heart change, this is not the intent. Our deepest desire is that we all be transformed into the likeness of Jesus. 
 * Beliefs
   * Mission Statement
@@ -63,7 +63,7 @@
     * We believe in the resurrection of both the saved and the lost, those who are saved to the resurrection of life and those who are lost to the resurrection of damnation.
   * Manhood
     * We believe that the Bible teaches that men are foundational. As go the men, so go the marriages, families, churches, communities and the culture.
-    * God created men and women equal but not the same. He bestowed upon men unique roles of Prophet, Priest, King, and Warrior to teach God’s Word to their wives, families, and friends, to serve their families, God’s people and church, to provide for their families and churches and to protect their marriages, families and churches. However, we live in the first generation in history that's confused about what it means to be a man. There's a fatherlessness crisis today because there's a crisis in manhood.
+    * God created men and women equal but not the same. He bestowed upon men unique roles of Prophet, Priest, King, and Warrior to teach God's Word to their wives, families, and friends, to serve their families, God's people and church, to provide for their families and churches and to protect their marriages, families and churches. However, we live in the first generation in history that's confused about what it means to be a man. There's a fatherlessness crisis today because there's a crisis in manhood.
     * Building a tribe of men, calling them out and up to the high, noble masculinity only found in Christ Jesus, and discipling in the gospel are the biggest challenges the church faces today. Jesus Christ is the ultimate Prophet, Priest, King, and Warrior who rescued us from sin and death, redeemed our fallen masculinity and set us truly free. Our hope is built on Him and Him alone.
   * Commitment
     * Rationale
@@ -87,16 +87,16 @@
         * We are convinced that a denial or neglect of these principles will lead to increasingly destructive consequences in our families, our churches, and the culture at large.
 * Founder & CEO Section
   * Pastor IV Marsh
-  * IV Marsh is a pastor, entrepreneur, author, marriage and leadership coach. He leads BCOMING.CHURCH, a mega multi-site church with his wife, Bené.  Epic was planted in 2007, now with multiple campuses reaching 5,000 people weekly in the United States and in multiple countries. IV is the founder and CEO of Lead Now, a veteran owned business committed to inspiring and equipping leaders and leadership teams throughout the business world. He is also the founder and CEO of the IAM4 Men’s Movement (now Becoming Man) and Warrior Evolution. Warrior Evolution is a 75 hour intensive that empowers men in spirit, soul, and body. A native of North Alabama, IV served in the United States Air Force with a majority of his career in Panama City, Panama fighting the war on drugs. He became involved in law enforcement before stepping into full-time ministry. IV and Bené have been married since 1994 and have three grown children and two daughters-in-law.
+  * IV Marsh is a pastor, entrepreneur, author, marriage and leadership coach. He leads BCOMING.CHURCH, a mega multi-site church with his wife, Bené.  Epic was planted in 2007, now with multiple campuses reaching 5,000 people weekly in the United States and in multiple countries. IV is the founder and CEO of Lead Now, a veteran owned business committed to inspiring and equipping leaders and leadership teams throughout the business world. He is also the founder and CEO of the IAM4 Men's Movement (now Becoming Man) and Warrior Evolution. Warrior Evolution is a 75 hour intensive that empowers men in spirit, soul, and body. A native of North Alabama, IV served in the United States Air Force with a majority of his career in Panama City, Panama fighting the war on drugs. He became involved in law enforcement before stepping into full-time ministry. IV and Bené have been married since 1994 and have three grown children and two daughters-in-law.
   * Social Media Links
     * Instagram
     * X
     * Youtube
 * Why manhood matters section
   * There are 113,000,000 men in America over the age of 15. 69,000,000 of these men make no profession of faith in Christ. 90 million men are not involved in any kind of discipleship, with only 6 million men are involved in discipleship (1 out of every 18 men)
-  * More than 90 percent of American men believe in God, and 5 out of 6 calls themselves Christians, but only 2 out of 6 attend church on a given Sunday. The typical U.S. Congregation draws an adult crowd that’s 61% female, 39% male. This gender gap shows up in all age categories. The average man accepts the reality of Jesus Christ, but fails to see any value in going to church. Churches overseas report gender gaps of up to 9 women for every adult man in attendance. 
-  * On any given Sunday, there are 13 million more adult women than men in America’s churches. This Sunday almost 25 percent of married, churchgoing women will worship without their husbands. Midweek activities often draw 70 to 80 percent female participants. The majority of church employees are women (except for ordained clergy, who are overwhelmingly male).  75% of volunteers are women (one mainline pastor said it was 99% in his church). 
-  * In America, fewer than 10% of U.S. churches are able to establish or maintain a vibrant men’s ministry, with fewer than 1% of churchgoing men participating in any sort of ongoing men's ministry program. 4 out of 5 students in evangelical churches will drop out of church by their senior year in high school. Over 70 percent of the boys who are being raised in church will abandon it during their teens and twenties. Many of these boys will never return.
+  * More than 90 percent of American men believe in God, and 5 out of 6 calls themselves Christians, but only 2 out of 6 attend church on a given Sunday. The typical U.S. Congregation draws an adult crowd that's 61% female, 39% male. This gender gap shows up in all age categories. The average man accepts the reality of Jesus Christ, but fails to see any value in going to church. Churches overseas report gender gaps of up to 9 women for every adult man in attendance. 
+  * On any given Sunday, there are 13 million more adult women than men in America's churches. This Sunday almost 25 percent of married, churchgoing women will worship without their husbands. Midweek activities often draw 70 to 80 percent female participants. The majority of church employees are women (except for ordained clergy, who are overwhelmingly male).  75% of volunteers are women (one mainline pastor said it was 99% in his church). 
+  * In America, fewer than 10% of U.S. churches are able to establish or maintain a vibrant men's ministry, with fewer than 1% of churchgoing men participating in any sort of ongoing men's ministry program. 4 out of 5 students in evangelical churches will drop out of church by their senior year in high school. Over 70 percent of the boys who are being raised in church will abandon it during their teens and twenties. Many of these boys will never return.
   * Christian universities are becoming convents. The typical Christian college in the U.S. enrolls almost 2 women for every 1 man, with the average ratio of men to women in Christian colleges at about 1 male to every 3 females. 
   * Fatherhood Matters
     * 33% of the 72 million children in America will go to bed without their biological father in the home. Fatherless children are five times as likely to live in poverty, repeat a grade, and have emotional problems. 93% of all people incarcerated are men and 85% of them have no father figure.
@@ -129,11 +129,11 @@
     * Apply Now
 * The Expeirence Section
   * High overview of the program
-  * WHAT IF, OVER THE COURSE OF 75 HOURS, YOU COULD TAP INTO A LIMITLESS SOURCE OF POWER YOU NEVER KNEW EXISTED? IMAGINE MOVING THROUGH LIFE WITH TOTAL CONFIDENCE IN YOUR ABILITY TO ACTUALLY HAVE THE LIFE, MARRIAGE, AND FINANCES YOU DESIRE. THAT’S WHAT BECOMING MAN WARRIOR EVOLUTION CAN DO FOR YOU.
-  * IT’S A TEST THAT CONNECTS YOU TO THE VERY CORE OF IAM4. WARRIOR EVOLUTION IS BRUTAL. NO, IT’S NOT FOR EVERYONE. YOU MAY NOT QUALIFY, OR MAKE IT THROUGH THE TRAINING. BUT, IF YOU’RE READY FOR THIS CHALLENGE, YOU’LL FIND IT TO BE AN EXPERIENCE THAT CHANGES YOUR LIFE, FOREVER.
+  * WHAT IF, OVER THE COURSE OF 75 HOURS, YOU COULD TAP INTO A LIMITLESS SOURCE OF POWER YOU NEVER KNEW EXISTED? IMAGINE MOVING THROUGH LIFE WITH TOTAL CONFIDENCE IN YOUR ABILITY TO ACTUALLY HAVE THE LIFE, MARRIAGE, AND FINANCES YOU DESIRE. THAT'S WHAT BECOMING MAN WARRIOR EVOLUTION CAN DO FOR YOU.
+  * IT'S A TEST THAT CONNECTS YOU TO THE VERY CORE OF IAM4. WARRIOR EVOLUTION IS BRUTAL. NO, IT'S NOT FOR EVERYONE. YOU MAY NOT QUALIFY, OR MAKE IT THROUGH THE TRAINING. BUT, IF YOU'RE READY FOR THIS CHALLENGE, YOU'LL FIND IT TO BE AN EXPERIENCE THAT CHANGES YOUR LIFE, FOREVER.
   * YOU WERE CREATED TO BE - PROPHET, PRIEST, KING, AND WARRIOR. 
 * The Outcome Section
-  * OUR DESIRE IS NOT MERELY TO PHYSICALLY TAX YOU FOR THE SAKE OF PUSHING YOU, BUT RATHER, TO HELP YOU DEVELOP MENTAL FORTITUDE AND VISION THAT IS ALREADY INSIDE OF YOU, BUT YOU ARE NOT AWARE OF. ONCE YOU SEE WHO YOU ARE, WHO'S YOU ARE, AND WHAT’S AVAILABLE TO YOU, IT BECOMES IMPOSSIBLE TO EVER SETTLE FOR LESS IN YOUR LIFE.
+  * OUR DESIRE IS NOT MERELY TO PHYSICALLY TAX YOU FOR THE SAKE OF PUSHING YOU, BUT RATHER, TO HELP YOU DEVELOP MENTAL FORTITUDE AND VISION THAT IS ALREADY INSIDE OF YOU, BUT YOU ARE NOT AWARE OF. ONCE YOU SEE WHO YOU ARE, WHO'S YOU ARE, AND WHAT'S AVAILABLE TO YOU, IT BECOMES IMPOSSIBLE TO EVER SETTLE FOR LESS IN YOUR LIFE.
   * IN THESE 75 HOURS, YOUR WARRIOR SPIRIT WILL EVOLVE AS YOU DISCOVER SELF DISCIPLINE & FOCUS WHILE YOU SHARPEN YOUR MIND, WILL, & EMOTIONS. YOUR ABILITY TO BE TOTALLY AWARE ON YOUR WHOLE LIFE WILL BE ENHANCED AND YOU WILL LEARN TO PURSUE UNTIL YOU REACH A PLACE OF LIVING LIFE TO THE FULLEST.
   * EVERY ASPECT OF YOUR SPIRIT, SOUL, AND BODY WILL BE TRAINED AND TESTED IN THESE 75 HOURS TOUCHING THE SIX PILLARS OF LIFE: PHYSICAL, MENTAL, EMOTIONAL, RELATIONAL, FINANCIAL, & SPIRITUAL. BY PUSHING YOU BEYOND YOUR SELF IMPOSED LIMITS, YOUR BELIEF OF WHO YOU ARE, WHO'S YOU ARE, AND WHAT'S AVAILABLE TO YOU WILL BE REVOLUTIONIZED.
 * Coaches Section
@@ -302,11 +302,257 @@ Fields required for the profile page that can be edited by the user:
 
 **Description**: Centralized management of users, content, and commerce.
 
-**Requirements**:
-* **User Management**: Invite code generation, status changes (active/suspended), basic moderation
-* **Thread Moderation**: Edit/delete threads, manage sponsored/featured threads
-* **Catalog Management**: Add/edit products, set prices, track orders
-* **Analytics (Phase 3)**: Engagement, sales, and usage metrics
+#### 5.1 User Management System
+
+**Description**: A comprehensive user management interface for administrators to manage platform users.
+
+**Core Features**:
+1. **User List View**
+   - Grid/table display of all users
+   - Sortable columns
+   - Search/filter functionality
+   - Pagination
+   - Quick view of essential information:
+     - Full Name
+     - Email
+     - Roles
+     - Social Media Links
+     - Profile Image
+
+2. **User Profile Modal**
+   - Triggered by clicking a user in the list
+   - Modern, responsive design supporting dark/light modes
+   - Sections:
+     * Profile Information
+       - Full Name (text input)
+       - Email (text input)
+       - Profile Image (with preview)
+       - Biography (textarea)
+     * Social Media Links
+       - Instagram URL (text input)
+       - X/Twitter URL (text input)
+       - YouTube URL (text input)
+     * Role Management
+       - Current roles display
+       - Add/remove roles functionality
+       - Role assignment history
+     * Invite Code Generation
+       - Generate new invite code button
+       - View previously generated codes
+       - Code status (used/unused)
+     * Account Actions
+       - Save Changes button
+       - Delete User button (with confirmation)
+
+3. **User Deletion Flow**
+   - Confirmation modal with warning
+   - Explanation of consequences
+   - Require admin password confirmation
+   - Cascade deletion handling:
+     * Remove profile_role entries
+     * Remove profile entry
+     * Revoke authentication access
+
+**Technical Implementation**:
+
+1. **Database Operations**:
+   ```sql
+   -- Profile Table
+   profile (
+     id INT PRIMARY KEY,
+     bio TEXT,
+     profile_img TEXT,
+     email TEXT,
+     full_name TEXT,
+     instagram_url TEXT,
+     twitter_url TEXT,
+     youtube_url TEXT
+   )
+
+   -- Role Table
+   role (
+     id INT PRIMARY KEY,
+     role_name TEXT
+   )
+
+   -- Profile Role Junction
+   profile_role (
+     profile_id INT REFERENCES profile(id),
+     role_id INT REFERENCES role(id),
+     assigned_at TIMESTAMPTZ,
+     PRIMARY KEY (profile_id, role_id)
+   )
+   ```
+
+2. **API Endpoints Required**:
+   ```typescript
+   // User Management
+   GET    /api/users              // List users with pagination
+   GET    /api/users/:id          // Get single user details
+   PUT    /api/users/:id          // Update user profile
+   DELETE /api/users/:id          // Delete user
+   
+   // Role Management
+   POST   /api/users/:id/roles    // Assign role
+   DELETE /api/users/:id/roles/:roleId // Remove role
+   
+   // Invite Codes
+   POST   /api/users/:id/invite   // Generate invite code
+   GET    /api/users/:id/invites  // List user's invite codes
+   ```
+
+3. **Component Structure**:
+   ```
+   components/
+     admin/
+       UserList.vue              // Main user list component
+       UserProfileModal.vue      // User profile modal
+       UserDeleteModal.vue       // Delete confirmation modal
+       UserRoleManager.vue       // Role management component
+       InviteCodeGenerator.vue   // Invite code component
+   ```
+
+4. **State Management**:
+   ```typescript
+   interface UserManagementState {
+     users: User[]
+     selectedUser: User | null
+     pagination: {
+       page: number
+       limit: number
+       total: number
+     }
+     filters: {
+       search: string
+       role?: number
+     }
+     isLoading: boolean
+     error: string | null
+   }
+   ```
+
+**User Interface Requirements**:
+
+1. **User List**:
+   ```vue
+   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+     <!-- User Card -->
+     <div class="bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg p-4">
+       <!-- User Info -->
+       <div class="flex items-center space-x-4">
+         <img class="w-12 h-12 rounded-full" :src="user.profile_img" />
+         <div>
+           <h3 class="font-medium">{{ user.full_name }}</h3>
+           <p class="text-sm text-black/70 dark:text-white/70">{{ user.email }}</p>
+         </div>
+       </div>
+       <!-- Roles -->
+       <div class="mt-4">
+         <div class="flex flex-wrap gap-2">
+           <span v-for="role in user.roles" 
+                 class="px-2 py-1 text-xs rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+             {{ role.role_name }}
+           </span>
+         </div>
+       </div>
+       <!-- Actions -->
+       <div class="mt-4 flex justify-end">
+         <button @click="openUserProfile(user)" 
+                 class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+           Manage User
+         </button>
+       </div>
+     </div>
+   </div>
+   ```
+
+2. **Profile Modal**:
+   ```vue
+   <div class="fixed inset-0 z-50 overflow-y-auto">
+     <div class="flex min-h-full items-end justify-center p-4 sm:items-center">
+       <div class="w-full max-w-2xl bg-white dark:bg-black rounded-lg shadow-xl">
+         <!-- Header -->
+         <div class="px-6 py-4 border-b border-black/10 dark:border-white/10">
+           <h2 class="text-xl font-semibold">Edit User Profile</h2>
+         </div>
+         
+         <!-- Content -->
+         <div class="px-6 py-4 space-y-6">
+           <!-- Profile Form -->
+           <form @submit.prevent="saveChanges" class="space-y-4">
+             <!-- Form Fields -->
+           </form>
+         </div>
+         
+         <!-- Footer -->
+         <div class="px-6 py-4 border-t border-black/10 dark:border-white/10 flex justify-between">
+           <button @click="closeModal" 
+                   class="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white">
+             Cancel
+           </button>
+           <div class="space-x-2">
+             <button @click="confirmDelete" 
+                     class="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">
+               Delete User
+             </button>
+             <button type="submit" 
+                     class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+               Save Changes
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   ```
+
+**Security Considerations**:
+
+1. **Role-Based Access Control**:
+   - Only users with admin role (role_id === 1) can access these features
+   - Middleware protection on all admin routes
+   - Server-side validation of admin status
+
+2. **Data Protection**:
+   - Validate all input data
+   - Sanitize output to prevent XSS
+   - Confirm destructive actions
+   - Log all admin actions for audit
+
+3. **Error Handling**:
+   - Graceful error handling with user-friendly messages
+   - Proper error logging
+   - Fallback UI states
+
+**Testing Requirements**:
+
+1. **Unit Tests**:
+   - Component rendering
+   - Form validation
+   - State management
+   - API integration
+
+2. **Integration Tests**:
+   - User flow testing
+   - Role management
+   - Delete user flow
+   - Error scenarios
+
+3. **E2E Tests**:
+   - Complete user management workflow
+   - Dark/light mode testing
+   - Responsive design testing
+
+This user management system should provide administrators with a powerful yet intuitive interface for managing platform users while maintaining security and data integrity.
+
+#### 5.2 Thread Moderation (Future Implementation)
+[Content moved to future phase]
+
+#### 5.3 Catalog Management (Future Implementation)
+[Content moved to future phase]
+
+#### 5.4 Analytics (Future Implementation)
+[Content moved to future phase]
 
 ## 5. Non-Functional Requirements
 

@@ -122,45 +122,39 @@
 import { useUserStore } from '~/stores/user'
 import { useToastStore } from '~/stores/toast'
 import { useNuxtApp } from '#app'
+import type { Profile } from '~/types/users'
 
-// Set the layout and middleware
+// Define page metadata using type-safe definePageMeta
 definePageMeta({
   layout: 'dashboard',
   middleware: ['auth']
 })
 
-// Types
+// Types with proper TypeScript interfaces
+type ProfileFormFields = 'full_name' | 'email' | 'profile_img' | 'bio' | 'instagram_url' | 'twitter_url' | 'youtube_url'
+
 interface ProfileFormData {
   full_name: string
   email: string
-  profile_img: string | null
+  profile_img: string
   bio: string
   instagram_url: string
   twitter_url: string
   youtube_url: string
 }
 
-interface FormErrors {
-  [key: string]: string
-}
+type FormErrors = Partial<Record<ProfileFormFields, string>>
 
-// Composables
-const { $client } = useNuxtApp()
+// Composables - using auto-imports
+const nuxtApp = useNuxtApp()
 const userStore = useUserStore()
 const toastStore = useToastStore()
+const route = useRoute()
 
-// Debug store state
-console.log('Initial store state:', {
-  isAuthenticated: userStore.isAuthenticated,
-  user: userStore.user,
-  profile: userStore.profile,
-  roles: userStore.roles
-})
-
-// Reactive state
-const isSubmitting = ref(false)
-const isLoading = ref(true)
-const isOffline = ref(false)
+// Reactive state with proper typing
+const isSubmitting = ref<boolean>(false)
+const isLoading = ref<boolean>(true)
+const isOffline = ref<boolean>(false)
 const errors = ref<FormErrors>({})
 
 // Form state with validation schema
@@ -174,15 +168,16 @@ const formData = ref<ProfileFormData>({
   youtube_url: ''
 })
 
-// Computed
-const showContent = computed(() => !isLoading.value && userStore.isAuthenticated)
-const isFormValid = computed(() => {
+// Computed properties with proper return types
+const showContent = computed((): boolean => !isLoading.value && userStore.isAuthenticated)
+
+const isFormValid = computed((): boolean => {
   const { full_name, email } = formData.value
-  return full_name.trim() && email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  return Boolean(full_name.trim() && email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
 })
 
-// Methods
-const resetErrors = () => {
+// Type-safe methods
+const resetErrors = (): void => {
   errors.value = {}
 }
 
@@ -204,27 +199,29 @@ const validateForm = (): boolean => {
   return Object.keys(errors.value).length === 0
 }
 
-// Network status handlers
-const handleOnline = () => {
+// Network status handlers with proper typing
+const handleOnline = (): void => {
   isOffline.value = false
   toastStore.showSuccess('You are back online!')
-  userStore.isAuthenticated && userStore.fetchUserProfile()
+  if (userStore.isAuthenticated) {
+    void userStore.fetchUserProfile()
+  }
 }
 
-const handleOffline = () => {
+const handleOffline = (): void => {
   isOffline.value = true
   toastStore.showError('You are offline. Changes will be saved when you reconnect.')
 }
 
-// Form submission
-const handleSubmit = async () => {
+// Form submission with proper async handling
+const handleSubmit = async (): Promise<void> => {
   if (!validateForm()) return
   
   isSubmitting.value = true
   resetErrors()
 
   try {
-    if ($client && !navigator.onLine) {
+    if (typeof window !== 'undefined' && !navigator.onLine) {
       throw new Error('You are offline. Please try again when you have an internet connection.')
     }
 
@@ -238,40 +235,46 @@ const handleSubmit = async () => {
   }
 }
 
-// Watchers
-watch(() => userStore.profile, (newProfile) => {
-  console.log('Profile updated:', newProfile)
-  if (newProfile) {
+// Modern Composition API usage with watchEffect
+watchEffect(() => {
+  const profile = userStore.profile
+  if (profile && 'full_name' in profile) {
+    const {
+      full_name,
+      email,
+      profile_img,
+      bio,
+      instagram_url,
+      twitter_url,
+      youtube_url
+    } = profile as Profile
+
     formData.value = {
-      full_name: newProfile.full_name || '',
-      email: newProfile.email || '',
-      profile_img: newProfile.profile_img || '',
-      bio: newProfile.bio || '',
-      instagram_url: newProfile.instagram_url || '',
-      twitter_url: newProfile.twitter_url || '',
-      youtube_url: newProfile.youtube_url || ''
+      full_name,
+      email,
+      profile_img: profile_img ?? '',
+      bio: bio ?? '',
+      instagram_url: instagram_url ?? '',
+      twitter_url: twitter_url ?? '',
+      youtube_url: youtube_url ?? ''
     }
   }
-}, { immediate: true })
+})
 
-// Lifecycle hooks
+// Lifecycle hooks with proper async handling
 onMounted(async () => {
-  console.log('Profile page mounted')
-  try {
-    if ($client) {
-      isOffline.value = !navigator.onLine
-      window.addEventListener('online', handleOnline)
-      window.addEventListener('offline', handleOffline)
-    }
+  if (typeof window !== 'undefined') {
+    isOffline.value = !navigator.onLine
+    window.addEventListener('online', handleOnline)
+    window.addEventListener('offline', handleOffline)
+  }
 
+  try {
     if (!userStore.profile) {
-      console.log('Fetching user profile...')
       await userStore.fetchUserProfile()
-      console.log('Profile fetched:', userStore.profile)
     }
   } catch (error) {
-    console.error('Error in onMounted:', error)
-    if ($client && !navigator.onLine) {
+    if (typeof window !== 'undefined' && !navigator.onLine) {
       toastStore.showError('You are currently offline. Some features may be limited.')
     } else {
       toastStore.showError('Failed to load profile. Please try again later.')
@@ -282,7 +285,7 @@ onMounted(async () => {
 })
 
 onUnmounted(() => {
-  if ($client) {
+  if (typeof window !== 'undefined') {
     window.removeEventListener('online', handleOnline)
     window.removeEventListener('offline', handleOffline)
   }

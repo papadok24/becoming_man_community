@@ -42,13 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
-
 const toastStore = useToastStore()
 const { toasts } = storeToRefs(toastStore)
 const { removeToast } = toastStore
-
-defineOptions({
-  name: 'Toast'
-})
 </script> 
